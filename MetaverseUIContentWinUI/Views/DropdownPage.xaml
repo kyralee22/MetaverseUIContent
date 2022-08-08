@@ -1,0 +1,93 @@
+﻿<Page
+    x:Class="MetaverseUIContent.Views.DropdownPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MetaverseUIContent.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <Grid Background="#f9f9f9" HorizontalAlignment="Stretch">
+            <StackPanel Background="#f9f9f9" Margin="40, 0, 0, 0">
+                <TextBlock Text="Initial button expands with scrollable options list to choose from." FontSize="16" Margin="0, 10, 0, 15"/>
+                <Border BorderThickness="0" Background="#F3F3F3" CornerRadius="5" HorizontalAlignment="Left" Width="1000" Height="230">
+                    <Grid Margin="25, 0, 0, 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="An expandable dropdown button" Margin="0, 15, 0, 0" FontWeight="SemiBold" FontSize="20" HorizontalAlignment="Left"/>
+                        <DropDownButton Content="Click here" CornerRadius="3" Grid.Row="1" Width="200" VerticalAlignment="Center">
+                            <DropDownButton.Flyout>
+                                <MenuFlyout Placement="Bottom">
+                                    <MenuFlyoutItem Width="170" Text="Option 1"/>
+                                    <MenuFlyoutItem Width="170" Text="Option 2"/>
+                                    <MenuFlyoutItem Width="170" Text="Option 3"/>
+                                </MenuFlyout>
+                            </DropDownButton.Flyout>
+                        </DropDownButton>
+                        <TextBlock Grid.Row="2" VerticalAlignment="Center" Text="Dropdown with a customizable number of options displayed on user click." FontSize="15"/>
+                        <Button Click="dropdownDownload" Grid.Row="3" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="-13, 0, 0, 20">
+                            <Grid>
+                                <FontIcon HorizontalAlignment="Left" FontFamily="Segoe MDL2 Assets" Glyph="&#xE896;" Foreground="#909090"/>
+                                <TextBlock Margin="30, 0, 0, 0" VerticalAlignment="Center" Text="DOWNLOAD ASSET" FontSize="16" TextDecorations="Underline" FontWeight="SemiBold" Foreground="#909090"/>
+                            </Grid>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <TextBlock Margin="0, 30, 0, 0" Text="Developing with UI Dropdowns in Unity" FontWeight="SemiBold" FontSize="22"/>
+                <Border BorderThickness="0" Background="#EFD9FD" Width="1000" Height="110" Margin="0, 15, 0, 0" HorizontalAlignment="Left" CornerRadius="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+                        <FontIcon HorizontalAlignment="Left" FontWeight="SemiBold" Margin="20, 20, 0, 0" Grid.Row="0" FontFamily="Segoe MDL2 Assets" Glyph="&#xE783;" Foreground="#575757"/>
+                        <TextBlock Text="Note" FontWeight="SemiBold" FontSize="18" Foreground="#575757" Grid.Row="0" HorizontalAlignment="Left" Margin="50, 18, 0, 0"/>
+                        <StackPanel Orientation="Horizontal"  Grid.Row="1" VerticalAlignment="Center">
+                            <TextBlock Text="Read the " HorizontalAlignment="Left" FontSize="16" Margin="22, 0, 5, 20"/>
+                            <TextBlock FontSize="16">
+                            <Hyperlink Click="navHowTo">How to Use</Hyperlink>
+                            </TextBlock>
+                            <TextBlock Text=" page for guidelines on using the Dropdown asset in your project." FontSize="16"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <TextBlock Text="To access the Dropdown component, expand the menu next to the Dropdown Canvas in the Unity Hierarchy window." FontStyle="Italic" FontSize="16" Margin="0, 20, 0, 0"/>
+                <StackPanel Orientation="Horizontal" Margin="35, 20, 0, 0">
+                    <TextBlock Text="•" FontSize="16" Margin="0, 0, 10, 0"/>
+                    <TextBlock Width="1000" TextWrapping="Wrap" Text="Add or remove options by scrolling down to the Options pane in the Dropdown's Inspector window." FontSize="16"/>
+                </StackPanel>
+                <StackPanel Margin="35, 15, 0, 0" Orientation="Horizontal"  Grid.Row="1" VerticalAlignment="Center">
+                    <TextBlock Text="•" FontSize="16" Margin="0, 0, 10, 0"/>
+                    <TextBlock Text="Change the Dropdown's Label or Option font using the " HorizontalAlignment="Left" FontSize="16" />
+                    <TextBlock FontSize="16" Margin="5, 0, 0, 0">
+                            <Hyperlink Click="navFonts">Fonts Package.</Hyperlink>
+                    </TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="35, 15, 0, 0">
+                    <TextBlock Text="•" FontSize="16" Margin="0, 0, 10, 0"/>
+                    <TextBlock Text="Switch Dropdown theme to Dark Mode by selecting the field in the DM_Dropdown script attached to the Dropdown child in the Inspector window." FontSize="16"/>
+                </StackPanel>
+                <Image Source="/Assets/Images/DM_Dropdown.png" HorizontalAlignment="Left" Stretch="Fill" Width="400" Margin="55, 15, 0, 0"/>
+                <StackPanel Orientation="Horizontal" Margin="35, 15, 0, 0">
+                    <TextBlock Text="•" FontSize="16" Margin="0, 0, 10, 0"/>
+                    <TextBlock Width="800" TextWrapping="Wrap" Text="Trigger a customized action when an option is selected using the On Value Changed method attached to an Item in the Inspector window." FontSize="16"/>
+                </StackPanel>
+                <Image Source="/Assets/Images/DropdownItem.png" Margin="55, 15, 0, 0" HorizontalAlignment="Left" Stretch="Fill" Width="900"/>
+                <StackPanel Orientation="Horizontal" Margin="35, 15, 0, 0">
+                    <TextBlock Text="•" FontSize="16" Margin="0, 0, 10, 0"/>
+                    <TextBlock Width="800" TextWrapping="Wrap" Text="Edit the appearance of the dropdown options by checking the box next to the Template label at the top of the Inspector window to view it in scene." FontSize="16"/>
+                </StackPanel>
+                <Image Source="/Assets/Images/TemplateVisible.png" Margin="55, 15, 0, 0" HorizontalAlignment="Left" Stretch="Fill" Width="300"/>
+                <TextBlock Text="Remember to uncheck when you are finished altering the Template!" FontStyle="Italic" Margin="55, 15, 0, 0" FontSize="16"/>
+                <Border Height="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

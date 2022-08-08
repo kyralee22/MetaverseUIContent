@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="MetaverseUIContent.Views.HowToUsePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MetaverseUIContent.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <Grid Background="#f9f9f9" HorizontalAlignment="Stretch">
+            <StackPanel Background="#f9f9f9" Margin="40, 0, 0, 0">
+                <TextBlock Text="Learn how to import each UI asset to your Unity project to start developing!" FontSize="16" Margin="0, 10, 0, 15"/>
+                <Border BorderThickness="0" Background="#EFD9FD" Width="1000" Height="110" HorizontalAlignment="Left" CornerRadius="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+                        <FontIcon HorizontalAlignment="Left" FontWeight="SemiBold" Margin="20, 20, 0, 0" Grid.Row="0" FontFamily="Segoe MDL2 Assets" Glyph="&#xE783;" Foreground="#575757"/>
+                        <TextBlock Text="Note" FontWeight="SemiBold" FontSize="18" Foreground="#575757" Grid.Row="0" HorizontalAlignment="Left" Margin="50, 18, 0, 0"/>
+                        <StackPanel Orientation="Horizontal"  Grid.Row="1" VerticalAlignment="Center">
+                            <TextBlock Text="If you do not have Unity version 2019.3 downloaded to your machine, download it " HorizontalAlignment="Left" FontSize="16" Margin="22, 0, 6, 20"/>
+                            <TextBlock FontSize="16">
+                            <Hyperlink NavigateUri="https://unity3d.com/get-unity/download">here.</Hyperlink>
+                            </TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <TextBlock Text="Creating a Unity Project" FontWeight="SemiBold" FontSize="22" HorizontalAlignment="Left" Margin="0, 20, 0, 0"/>
+                <TextBlock Text="1. Open Unity Hub and select New Project." FontSize="16" HorizontalAlignment="Left" Margin="30, 10, 0, 0"/>
+                <TextBlock Text="2. Select the 3D template, rename your project, and change destination as preferred." FontSize="16" HorizontalAlignment="Left" Margin="30, 10, 0, 0"/>
+                <Image Source="/Assets/Images/UnityProjEx.png" Width="600" Stretch="Uniform" HorizontalAlignment="Left" Margin="50, 15, 0, 0"/>
+                <TextBlock Text="3. Click Create Project." FontSize="16" HorizontalAlignment="Left" Margin="30, 15, 0, 0"/>
+                <TextBlock Text="Importing the UI Components" FontWeight="SemiBold" FontSize="22" HorizontalAlignment="Left" Margin="0, 20, 0, 0"/>
+                <TextBlock Text="Make sure your project has an EventSystems in its Hierarchy!" FontSize="16" FontStyle="Italic" HorizontalAlignment="Left" Margin="0, 10, 0, 0"/>
+                <TextBlock FontSize="16" HorizontalAlignment="Left" Margin="30, 10, 0, 0">
+                    <Run>
+                        1. In your newly created project, select 
+                    </Run>
+                    <Bold>
+                        <Run>
+                            Assets > Import Package > Custom Package
+                        </Run>
+                    </Bold>
+                </TextBlock>
+                <TextBlock Text="2. Locate your downloaded UI package and click Open." FontSize="16" HorizontalAlignment="Left" Margin="30, 10, 0, 0"/>
+                <TextBlock Text="3. Ensure every component is selected and press Import." FontSize="16" HorizontalAlignment="Left" Margin="30, 10, 0, 0"/>
+                <TextBlock Text="Using the UI Components" FontWeight="SemiBold" FontSize="22" HorizontalAlignment="Left" Margin="0, 20, 0, 0"/>
+                <TextBlock Text="This section does not apply to the Fonts package since it is not a prefab." FontStyle="Italic" Margin="0, 10, 0, 0" FontSize="16"/>
+                <TextBlock Text="1. You should now see a folder with the component name in your Assets. Open the folder and drag the UI prefab to your Hierarchy" FontSize="16" HorizontalAlignment="Left" Margin="30, 10, 0, 0"/>
+                <Image Source="/Assets/Images/PrefabExample.png" Width="400" Margin="50, 15, 0, 0" HorizontalAlignment="Left" Stretch="Fill"/>
+                <TextBlock Text="2. Your component should now be visible in your scene." FontSize="16" HorizontalAlignment="Left" Margin="30, 10, 0, 0"/>
+                <TextBlock Text="3. Explore your component's built in functionality in the Inspector window and begin developing." FontSize="16" HorizontalAlignment="Left" Margin="30, 10, 0, 0"/>
+                <Border Height="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+   
+</Page>

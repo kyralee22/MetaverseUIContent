@@ -1,0 +1,222 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+	 <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <RootNamespace>MetaverseUIContentWinUI</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Platforms>x86;x64;arm64</Platforms>
+    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
+    <UseWinUI>true</UseWinUI>
+    <EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64|arm64</AppxBundlePlatforms>
+    <GenerateTemporaryStoreCertificate>True</GenerateTemporaryStoreCertificate>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+    <AppxPackageDir>C:\Users\t-kyralee\source\repos\MetaverseUIContentWinUI\</AppxPackageDir>
+
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="Assets\TeachingTip.unitypackage" />
+    <Content Remove="Assets\TextBox.unitypackage" />
+    <Content Remove="Assets\Toggle.unitypackage" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\beach.jpg" />
+    <None Remove="Assets\Button.unitypackage" />
+    <None Remove="Assets\Checkbox.unitypackage" />
+    <None Remove="Assets\Dropdown.unitypackage" />
+    <None Remove="Assets\DropdownItem.png" />
+    <None Remove="Assets\FlipView.unitypackage" />
+    <None Remove="Assets\FlipViewExamples.png" />
+    <None Remove="Assets\Flyout.unitypackage" />
+    <None Remove="Assets\FontExample.png" />
+    <None Remove="Assets\Fonts.unitypackage" />
+    <None Remove="Assets\forest.jpg" />
+    <None Remove="Assets\Images\ChangeIncrement.png" />
+    <None Remove="Assets\Images\DM_Button.png" />
+    <None Remove="Assets\Images\DM_Checkbox.png" />
+    <None Remove="Assets\Images\DM_Dropdown.png" />
+    <None Remove="Assets\Images\DM_FlipView.png" />
+    <None Remove="Assets\Images\DM_NumberBox.png" />
+    <None Remove="Assets\Images\DM_SelectButton.png" />
+    <None Remove="Assets\Images\DM_Slider.png" />
+    <None Remove="Assets\Images\DM_TeachingTip.png" />
+    <None Remove="Assets\Images\DM_TextBox.png" />
+    <None Remove="Assets\Images\DM_Toggle.png" />
+    <None Remove="Assets\Images\FlyoutExample.png" />
+    <None Remove="Assets\Images\MoveFlyout.png" />
+    <None Remove="Assets\Images\MoveTool.png" />
+    <None Remove="Assets\Images\NumberBoxExample.png" />
+    <None Remove="Assets\Images\PlaceholderText.png" />
+    <None Remove="Assets\Images\SliderRange.png" />
+    <None Remove="Assets\Images\ToggleButtonExample.png" />
+    <None Remove="Assets\mountain.jpg" />
+    <None Remove="Assets\NumberBox.unitypackage" />
+    <None Remove="Assets\PrefabExample.png" />
+    <None Remove="Assets\SelectButton.unitypackage" />
+    <None Remove="Assets\Slider.unitypackage" />
+    <None Remove="Assets\sunset.jpg" />
+    <None Remove="Assets\TemplateVisible.png" />
+    <None Remove="Assets\Unity Assets\Button.unitypackage" />
+    <None Remove="Assets\Unity Assets\Checkbox.unitypackage" />
+    <None Remove="Assets\Unity Assets\Dropdown.unitypackage" />
+    <None Remove="Assets\Unity Assets\FlipView.unitypackage" />
+    <None Remove="Assets\Unity Assets\NumberBox.unitypackage" />
+    <None Remove="Assets\Unity Assets\SelectButton.unitypackage" />
+    <None Remove="Assets\Unity Assets\Slider.unitypackage" />
+    <None Remove="Assets\Unity Assets\TeachingTip.unitypackage" />
+    <None Remove="Assets\Unity Assets\TextBox.unitypackage" />
+    <None Remove="Assets\Unity Assets\Toggle.unitypackage" />
+    <None Remove="Assets\UnityProjEx.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.3" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22000.194" />
+    <Manifest Include="$(ApplicationManifest)" />
+  </ItemGroup>
+
+  <!-- Defining the "Msix" ProjectCapability here allows the Single-project MSIX Packaging
+       Tools extension to be activated for this project even if the Windows App SDK Nuget
+       package has not yet been restored -->
+  <ItemGroup Condition="'$(DisableMsixProjectCapabilityAddedByProject)'!='true' and '$(EnablePreviewMsixTooling)'=='true'">
+    <ProjectCapability Include="Msix" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Assets\Images\beach.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\ChangeIncrement.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DM_Button.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DM_Checkbox.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DM_Dropdown.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DM_FlipView.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DM_NumberBox.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DM_SelectButton.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DM_Slider.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DM_TeachingTip.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DM_TextBox.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DM_Toggle.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\FlyoutExample.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\MoveFlyout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\MoveTool.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\NumberBoxExample.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\PlaceholderText.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\SliderRange.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\ToggleButtonExample.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\DropdownItem.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\FlipViewExamples.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\FontExample.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\Button.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\Checkbox.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\Dropdown.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\FlipView.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\Fonts.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\forest.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\HowToBackground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\mountain.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\PrefabExample.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\sunset.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\TemplateVisible.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Images\UnityProjEx.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\NumberBox.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\SelectButton.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\Slider.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\TeachingTip.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\TextBox.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Assets\Unity Assets\Toggle.unitypackage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>

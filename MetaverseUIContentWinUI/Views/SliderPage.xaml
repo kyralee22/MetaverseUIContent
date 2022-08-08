@@ -1,0 +1,96 @@
+﻿<Page
+    x:Class="MetaverseUIContent.Views.SliderPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MetaverseUIContent.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+        <Grid Background="#f9f9f9" HorizontalAlignment="Stretch">
+            <StackPanel Background="#f9f9f9" Margin="40, 0, 0, 0">
+                <TextBlock Text="Allows users to choose within a range of numerical values." FontSize="16" Margin="0, 10, 0, 15"/>
+                <Border BorderThickness="0" Background="#F3F3F3" CornerRadius="5" HorizontalAlignment="Left" Width="1000" Height="230">
+                    <Grid Margin="25, 0, 0, 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="1.3*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="A sliding value tracker" Margin="0, 15, 0, 0" FontWeight="SemiBold" FontSize="20" HorizontalAlignment="Left"/>
+                        <Slider Grid.Row="1" HorizontalAlignment="Left" Width="170" VerticalAlignment="Center">
+                            <Slider.Resources>
+                                <ResourceDictionary x:Name="SliderResources">
+                                    <ResourceDictionary.ThemeDictionaries>
+                                        <ResourceDictionary x:Key="Light">
+                                            <SolidColorBrush x:Key="SliderThumbBackground"  
+                                                         Color="#005FB8"/>
+                                            <SolidColorBrush x:Key="SliderTrackValueFill"
+                                                         Color="#005FB8"/>
+                                            <SolidColorBrush x:Key="SliderTrackValueFillPointerOver"
+                                                         Color="#005FB8"/>
+                                            <SolidColorBrush x:Key="SliderTrackValueFillPressed"
+                                                         Color="#005FB8"/>
+                                            <SolidColorBrush x:Key="SliderThumbBackgroundPointerOver"
+                                                         Color="#005FB8"/>
+                                            <SolidColorBrush x:Key="SliderThumbBackgroundPressed"
+                                                         Color="#005FB8"/>
+                                        </ResourceDictionary>
+                                    </ResourceDictionary.ThemeDictionaries>
+                                </ResourceDictionary>
+                            </Slider.Resources>
+                        </Slider>
+                        <TextBlock Grid.Row="2" VerticalAlignment="Center" Text="Sliding handle that dynamically changes to reflect the specified number within a given range." FontSize="15"/>
+                        <Button Click="sliderDownload" Grid.Row="3" Background="Transparent" BorderThickness="0" HorizontalAlignment="Left" Margin="-13, 0, 0, 20">
+                            <Grid>
+                                <FontIcon HorizontalAlignment="Left" FontFamily="Segoe MDL2 Assets" Glyph="&#xE896;" Foreground="#909090"/>
+                                <TextBlock Margin="30, 0, 0, 0" VerticalAlignment="Center" Text="DOWNLOAD ASSET" FontSize="16" TextDecorations="Underline" FontWeight="SemiBold" Foreground="#909090"/>
+                            </Grid>
+                        </Button>
+                    </Grid>
+                </Border>
+
+                <TextBlock Margin="0, 30, 0, 0" Text="Developing with UI Sliders in Unity" FontWeight="SemiBold" FontSize="22"/>
+                <Border BorderThickness="0" Background="#EFD9FD" Width="1000" Height="110" Margin="0, 15, 0, 0" HorizontalAlignment="Left" CornerRadius="5">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="5*"/>
+                        </Grid.RowDefinitions>
+                        <FontIcon HorizontalAlignment="Left" FontWeight="SemiBold" Margin="20, 20, 0, 0" Grid.Row="0" FontFamily="Segoe MDL2 Assets" Glyph="&#xE783;" Foreground="#575757"/>
+                        <TextBlock Text="Note" FontWeight="SemiBold" FontSize="18" Foreground="#575757" Grid.Row="0" HorizontalAlignment="Left" Margin="50, 18, 0, 0"/>
+                        <StackPanel Orientation="Horizontal"  Grid.Row="1" VerticalAlignment="Center">
+                            <TextBlock Text="Read the " HorizontalAlignment="Left" FontSize="16" Margin="22, 0, 5, 20"/>
+                            <TextBlock FontSize="16">
+                            <Hyperlink Click="navHowTo">How to Use</Hyperlink>
+                            </TextBlock>
+                            <TextBlock Text=" page for guidelines on using the Slider asset in your project." FontSize="16"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+                <TextBlock Text="To access the Slider component, expand the menu next to the Slider Canvas in the Unity Hierarchy window." FontStyle="Italic" FontSize="16" Margin="0, 20, 0, 0"/>
+               
+                <StackPanel Orientation="Horizontal" Margin="35, 20, 0, 0">
+                    <TextBlock Text="•" FontSize="16" Margin="0, 0, 10, 0"/>
+                    <TextBlock Text="Switch Slider theme to Dark Mode by selecting the field in the DM_Slider script attached to the Slider child in the Inspector window." FontSize="16"/>
+                </StackPanel>
+                <Image Source="/Assets/Images/DM_Slider.png" HorizontalAlignment="Left" Stretch="Fill" Width="400" Margin="55, 15, 0, 0"/>
+                <StackPanel Orientation="Horizontal" Margin="35, 15, 0, 0">
+                    <TextBlock Text="•" FontSize="16" Margin="0, 0, 10, 0"/>
+                    <TextBlock Width="1000" TextWrapping="Wrap" Text="Set the range of numbers the slider represents in the 'Min Value' and 'Max Value' fields found in the Slider's Inspector window." FontSize="16"/>
+                </StackPanel>
+                <Image Source="/Assets/Images/SliderRange.png" HorizontalAlignment="Left" Stretch="Fill" Width="400" Margin="53, 15, 0, 0"/>
+                <StackPanel Orientation="Horizontal" Margin="35, 15, 0, 0">
+                    <TextBlock Text="•" FontSize="16" Margin="0, 0, 10, 0"/>
+                    <TextBlock Width="1000" TextWrapping="Wrap" Text="Specify by how much the slider label should change by inputting a number in the 'Increment Val' field in the Slider Value script found in the Slider's Inspector window." FontSize="16"/>
+                </StackPanel>
+                <Image Source="/Assets/Images/ChangeIncrement.png" HorizontalAlignment="Left" Stretch="Fill" Width="400" Margin="53, 15, 0, 0"/>
+                
+                <Border Height="20" Background="Transparent" BorderThickness="0"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
