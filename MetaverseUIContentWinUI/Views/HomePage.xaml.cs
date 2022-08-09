@@ -93,6 +93,12 @@ namespace MetaverseUIContent.Views
             this.Frame.Navigate(typeof(TogglePage));
             navBar.setSelected("Toggle_Item");
         }
+        public void optionClick(object sender, RoutedEventArgs e)
+        {
+            DropDownButton d = (DropDownButton)FindName("dropdownButton");
+            MenuFlyoutItem m = (MenuFlyoutItem)sender;
+            d.Content = m.Text;
+        }
 
     }
 }

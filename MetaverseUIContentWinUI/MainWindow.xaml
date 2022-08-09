@@ -7,13 +7,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+
     <Grid Background="#f9f9f9">
         <NavigationView x:Name="NavBar" 
                         Loaded="NavBar_Loaded" 
                         SelectionChanged="NavBar_SelectionChanged" 
                         ItemInvoked="NavBar_ItemInvoked" 
                         IsTabStop="False"
-                        Background="#f9f9f9">
+                        Background="#f9f9f9"
+                        IsBackEnabled="true"
+                        BackRequested="NavView_BackRequested">
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="Home" Tag="Home_Page">
                     <TextBlock Tag="Nav_Home">Home</TextBlock>

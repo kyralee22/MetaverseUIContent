@@ -21,12 +21,12 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" Text="An expandable dropdown button" Margin="0, 15, 0, 0" FontWeight="SemiBold" FontSize="20" HorizontalAlignment="Left"/>
-                        <DropDownButton Content="Click here" CornerRadius="3" Grid.Row="1" Width="200" VerticalAlignment="Center">
+                        <DropDownButton x:Name="dropdownButton" Content="Click here" CornerRadius="3" Grid.Row="1" Width="200" VerticalAlignment="Center">
                             <DropDownButton.Flyout>
                                 <MenuFlyout Placement="Bottom">
-                                    <MenuFlyoutItem Width="170" Text="Option 1"/>
-                                    <MenuFlyoutItem Width="170" Text="Option 2"/>
-                                    <MenuFlyoutItem Width="170" Text="Option 3"/>
+                                    <MenuFlyoutItem Width="170" Text="Option 1" Click="optionClick"/>
+                                    <MenuFlyoutItem Width="170" Text="Option 2" Click="optionClick"/>
+                                    <MenuFlyoutItem Width="170" Text="Option 3" Click="optionClick"/>
                                 </MenuFlyout>
                             </DropDownButton.Flyout>
                         </DropDownButton>

@@ -123,12 +123,12 @@
                     </Grid.RowDefinitions>
                     <TextBlock Margin="15,0,0,10" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0" Text="Dropdown" FontWeight="SemiBold" FontSize="17"/>
                     <TextBlock Margin="15, 0, 0, 0" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Text="Intial button expands with scrollable options list to choose from" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
-                    <DropDownButton Content="Click here" CornerRadius="3" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                    <DropDownButton x:Name="dropdownButton" Content="Click here" CornerRadius="3" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center">
                         <DropDownButton.Flyout>
                             <MenuFlyout Placement="Bottom">
-                                <MenuFlyoutItem Text="Option 1"/>
-                                <MenuFlyoutItem Text="Option 2"/>
-                                <MenuFlyoutItem Text="Option 3"/>
+                                <MenuFlyoutItem Text="Option 1" Click="optionClick"/>
+                                <MenuFlyoutItem Text="Option 2" Click="optionClick"/>
+                                <MenuFlyoutItem Text="Option 3" Click="optionClick"/>
                             </MenuFlyout>
                         </DropDownButton.Flyout>
                     </DropDownButton>

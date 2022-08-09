@@ -19,6 +19,8 @@ using Windows.UI.Xaml;
 using Windows.Storage.Pickers;
 using WinRT.Interop;
 using Windows.Storage;
+using Windows.UI.Core;
+using Windows.System;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -33,6 +35,7 @@ namespace MetaverseUIContentWinUI
         public MainWindow()
         {
             this.InitializeComponent();
+            Title = "Metaverse UI Content";
         }
 
         #region NavigationView event handlers
@@ -48,6 +51,54 @@ namespace MetaverseUIContentWinUI
                 }
             }
             contentFrame.Navigate(typeof(HomePage));
+        }
+        private void NavView_BackRequested(NavigationView sender, NavigationViewBackRequestedEventArgs args)
+        {
+            TryGoBack();
+        }
+
+        private void CoreDispatcher_AcceleratorKeyActivated(CoreDispatcher sender, AcceleratorKeyEventArgs e)
+        {
+            // When Alt+Left are pressed navigate back
+            if (e.EventType == CoreAcceleratorKeyEventType.SystemKeyDown
+                && e.VirtualKey == VirtualKey.Left
+                && e.KeyStatus.IsMenuKeyDown == true
+                && !e.Handled)
+            {
+                e.Handled = TryGoBack();
+            }
+        }
+
+        private void System_BackRequested(object sender, BackRequestedEventArgs e)
+        {
+            if (!e.Handled)
+            {
+                e.Handled = TryGoBack();
+            }
+        }
+
+        private void CoreWindow_PointerPressed(CoreWindow sender, PointerEventArgs e)
+        {
+            // Handle mouse back button.
+            if (e.CurrentPoint.Properties.IsXButton1Pressed)
+            {
+                e.Handled = TryGoBack();
+            }
+        }
+
+        private bool TryGoBack()
+        {
+            if (!contentFrame.CanGoBack)
+                return false;
+
+            // Don't go back if the nav pane is overlayed.
+            if (NavBar.IsPaneOpen &&
+                (NavBar.DisplayMode == NavigationViewDisplayMode.Compact ||
+                 NavBar.DisplayMode == NavigationViewDisplayMode.Minimal))
+                return false;
+
+            contentFrame.GoBack();
+            return true;
         }
 
         private void NavBar_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)

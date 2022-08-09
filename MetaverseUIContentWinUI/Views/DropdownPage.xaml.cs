@@ -45,5 +45,12 @@ namespace MetaverseUIContent.Views
         {
             wnd.pickDownloadLocation("ms-appx:///Assets/Unity Assets/Dropdown.unitypackage", "DropdownAsset.unitypackage");
         }
+
+        public void optionClick(object sender, RoutedEventArgs e)
+        {
+            DropDownButton d = (DropDownButton)FindName("dropdownButton");
+            MenuFlyoutItem m = (MenuFlyoutItem)sender;
+            d.Content = m.Text;
+        }
     }
 }
