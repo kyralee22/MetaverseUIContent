@@ -10,7 +10,7 @@
   <Identity
     Name="44250KyraLee.MetaverseUIContentApp"
     Publisher="CN=D53E6BE3-B55D-42FC-8F63-30A1E7247474"
-    Version="1.0.6.0" />
+    Version="1.0.8.0" />
 
   <Properties>
     <DisplayName>Metaverse UI Content App</DisplayName>
