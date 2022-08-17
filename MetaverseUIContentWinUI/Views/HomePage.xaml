@@ -5,13 +5,94 @@
     xmlns:local="using:MetaverseUIContent.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="#f9f9f9">
+    mc:Ignorable="d">
 
-  
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Light">
+                    <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
+                                                         Color="White"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"  
+                                                         Color="{ThemeResource AccentFillColorDefaultBrush}"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
+                                                         Color="#005FB8"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPointerOver" 
+                                                         Color="{ThemeResource ControlAltFillColorTertiaryBrush}"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver" 
+                                                         Color="#1A6FC0"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPressed"
+                                                         Color="#1A6FC0"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver"
+                                                         Opacity="0"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed"
+                                                         Opacity="0"/>
 
+                    <SolidColorBrush x:Key="ToggleSwitchFillOnPointerOver"  
+                                                         Color="#005FB8"/>
+                    <SolidColorBrush x:Key="ToggleSwitchFillOn"
+                                                         Color="#005FB8"/>
+                    <SolidColorBrush x:Key="ToggleSwitchFillOnPressed"
+                                                         Color="#196EBF"/>
+
+                    <SolidColorBrush x:Key="SliderThumbBackground"  
+                                                         Color="#005FB8"/>
+                    <SolidColorBrush x:Key="SliderTrackValueFill"
+                                                         Color="#005FB8"/>
+                    <SolidColorBrush x:Key="SliderTrackValueFillPointerOver"
+                                                         Color="#005FB8"/>
+                    <SolidColorBrush x:Key="SliderTrackValueFillPressed"
+                                                         Color="#005FB8"/>
+                    <SolidColorBrush x:Key="SliderThumbBackgroundPointerOver"
+                                                         Color="#005FB8"/>
+                    <SolidColorBrush x:Key="SliderThumbBackgroundPressed"
+                                                         Color="#005FB8"/>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
+                                                         Color="Black"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"  
+                                                         Color="Black"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
+                                                         Color="#98ECFE"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPointerOver" 
+                                                         Color="{ThemeResource ControlAltFillColorTertiaryBrush}"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver" 
+                                                         Color="#98ECFE"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPressed"
+                                                         Color="#98ECFE"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver"
+                                                         Opacity="0"/>
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed"
+                                                         Opacity="0"/>
+
+                    <SolidColorBrush x:Key="ToggleSwitchFillOnPointerOver"  
+                                                         Color="#98ECFE"/>
+                    <SolidColorBrush x:Key="ToggleSwitchFillOn"
+                                                         Color="#98ECFE"/>
+                    <SolidColorBrush x:Key="ToggleSwitchFillOnPressed"
+                                                         Color="#60CCFE"/>
+
+                    <SolidColorBrush x:Key="SliderThumbBackground"  
+                                                         Color="#98ECFE"/>
+                    <SolidColorBrush x:Key="SliderTrackValueFill"
+                                                         Color="#98ECFE"/>
+                    <SolidColorBrush x:Key="SliderTrackValueFillPointerOver"
+                                                         Color="#98ECFE"/>
+                    <SolidColorBrush x:Key="SliderTrackValueFillPressed"
+                                                         Color="#98ECFE"/>
+                    <SolidColorBrush x:Key="SliderThumbBackgroundPointerOver"
+                                                         Color="#98ECFE"/>
+                    <SolidColorBrush x:Key="SliderThumbBackgroundPressed"
+                                                         Color="#98ECFE"/>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    
     <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-        <Grid Background="#f9f9f9" Margin="20, 10, 20, 0" HorizontalAlignment="Stretch">
+        <Grid Margin="20, 10, 20, 0" HorizontalAlignment="Stretch">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="550"/>
                 <ColumnDefinition Width="550"/>
@@ -52,7 +133,7 @@
                 </Grid>
             </Button>
             <!-- BUTTON -->
-            <Button Click="SwitchToButton" Background="#FFFFFF" BorderBrush="#EAEAEA" Margin="17, 5, 17, 5" Grid.Column="0" Grid.Row="2" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Button Click="SwitchToButton" Background="{ThemeResource ControlFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Margin="17, 5, 17, 5" Grid.Column="0" Grid.Row="2" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition x:Name="ButtonCol1" Width="5*"/>
@@ -64,12 +145,12 @@
                     </Grid.RowDefinitions>
                     <TextBlock Margin="15,0, 0, 10" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0" Text="Button" FontWeight="SemiBold" FontSize="17"/>
                     <TextBlock Margin="15, 0, 0, 0" VerticalAlignment="Top" Width="{Binding ElementName=ButtonCol1, Path=Width}" Grid.Column="0" Grid.Row="1" Text="Two different types of buttons that react to user clicks" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
-                    <Button Content="Click here" Margin="0, 0, 10, 0" Grid.Column="1" Grid.Row="0" Width="{Binding ElementName=ButtonCol2, Path=Width}" Height="40" CornerRadius="3" BorderBrush="#EAEAEA" Background="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
-                    <ToggleButton Style="{StaticResource BlueBackground}" Content="Click here" Margin="0, 0, 10, 0" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" CornerRadius="3" Height="40" BorderBrush="#EAEAEA" Background="#FFFFFF"/>
+                    <Button Content="Click here" Margin="0, 0, 10, 0" Grid.Column="1" Grid.Row="0" Width="{Binding ElementName=ButtonCol2, Path=Width}" Height="40" CornerRadius="3" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Background="{ThemeResource ControlFillColorDefaultBrush}" VerticalAlignment="Center" HorizontalAlignment="Stretch"/>
+                    <ToggleButton Style="{x:Bind styleTheme}" Content="Click here" Margin="0, 0, 10, 0" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" CornerRadius="3" Height="40" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Background="{ThemeResource ControlFillColorDefaultBrush}"/>
                 </Grid>
             </Button>
             <!-- CHECKMARK -->
-            <Button Click="SwitchToCheckbox" Background="#FFFFFF" BorderBrush="#EAEAEA" Margin="17, 5, 17, 5" Grid.Column="1" Grid.Row="2" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Button Click="SwitchToCheckbox" Background="{ThemeResource ControlFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Margin="17, 5, 17, 5" Grid.Column="1" Grid.Row="2" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                    
                     <Grid.ColumnDefinitions>
@@ -82,36 +163,12 @@
                     </Grid.RowDefinitions>
                     <TextBlock Margin="15,0,0,10" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0" Text="Checkbox" FontWeight="SemiBold" FontSize="17"/>
                     <TextBlock Margin="15, 0, 0, 0" VerticalAlignment="Top" Width="{Binding ElementName=CheckboxCol1, Path=Width}" Grid.Column="0" Grid.Row="1" Text="Selectable checkbox option for multiple choice cases" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
-                    <CheckBox Content="Check here" Margin="0, 0, 10, 0" Width="{Binding ElementName=CheckboxCol2, Path=Width}" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-                        <CheckBox.Resources>
-                            <ResourceDictionary x:Name="CheckboxResources">
-                                <ResourceDictionary.ThemeDictionaries>
-                                    <ResourceDictionary x:Key="Light">
-                                        <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
-                                                         Color="White"/>
-                                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"  
-                                                         Color="#005FB8"/>
-                                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
-                                                         Color="#005FB8"/>
-                                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillUncheckedPointerOver" 
-                                                         Color="#F0F0F0"/>
-                                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPointerOver" 
-                                                         Color="#1A6FC0"/>
-                                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillCheckedPressed"
-                                                         Color="#1A6FC0"/>
-                                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPointerOver"
-                                                         Opacity="0"/>
-                                        <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeCheckedPressed"
-                                                         Opacity="0"/>
-                                    </ResourceDictionary>
-                                </ResourceDictionary.ThemeDictionaries>
-                            </ResourceDictionary>
-                        </CheckBox.Resources>
-                    </CheckBox>
+                    <CheckBox Content="Check here" Margin="0, 0, 10, 0" Width="{Binding ElementName=CheckboxCol2, Path=Width}" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
                 </Grid>
             </Button>
             <!-- DROPDOWN -->
-            <Button Click="SwitchToDropdown" Background="#FFFFFF" BorderBrush="#EAEAEA" Margin="17, 5, 17, 5" Grid.Column="0" Grid.Row="4" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Button Click="SwitchToDropdown" Background="{ThemeResource ControlFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Margin="17, 5, 17, 5" Grid.Column="0" Grid.Row="4" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition x:Name="DropdownCol1" Width="5*"/>
@@ -135,7 +192,7 @@
                 </Grid>
             </Button>
             <!-- FLIPVIEW -->
-            <Button Click="SwitchToFlipView" Background="#FFFFFF" BorderBrush="#EAEAEA" Margin="17, 5, 17, 5" Grid.Column="1" Grid.Row="4" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Button Click="SwitchToFlipView" Background="{ThemeResource ControlFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Margin="17, 5, 17, 5" Grid.Column="1" Grid.Row="4" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*"/>
@@ -156,7 +213,7 @@
                 </Grid>
             </Button>
             <!-- FONTS -->
-            <Button Click="SwitchToFonts" Background="#FFFFFF" BorderBrush="#EAEAEA" Margin="17, 5, 17, 5" Grid.Column="0" Grid.Row="6" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Button Click="SwitchToFonts" Background="{ThemeResource ControlFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Margin="17, 5, 17, 5" Grid.Column="0" Grid.Row="6" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*"/>
@@ -176,7 +233,7 @@
                 </Grid>
             </Button>
             <!-- NUMBER BOX -->
-            <Button Click="SwitchToNumberBox" Background="#FFFFFF" BorderBrush="#EAEAEA" Margin="17, 5, 17, 5" Grid.Column="1" Grid.Row="6" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Button Click="SwitchToNumberBox" Background="{ThemeResource ControlFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Margin="17, 5, 17, 5" Grid.Column="1" Grid.Row="6" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*"/>
@@ -188,11 +245,11 @@
                     </Grid.RowDefinitions>
                     <TextBlock Margin="15,0,0,10" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0" Text="Number Box" FontWeight="SemiBold" FontSize="17"/>
                     <TextBlock Margin="15, 0, 0, 0" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Text="Reacts to numerical user input with customizable increment/decrement values" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
-                    <NumberBox Grid.RowSpan="2" Grid.Column="1" Header="Enter a number:" Value="1" SpinButtonPlacementMode="Inline" SmallChange="10" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectionHighlightColor="#005FB8"/>
+                    <NumberBox Grid.RowSpan="2" Grid.Column="1" Header="Enter a number:" Value="1" SpinButtonPlacementMode="Inline" SmallChange="10" HorizontalAlignment="Stretch" VerticalAlignment="Center" SelectionHighlightColor="{ThemeResource SystemAccentColor}"/>
                 </Grid>
             </Button>
             <!-- SLIDER -->
-            <Button Click="SwitchToSlider" Background="#FFFFFF" BorderBrush="#EAEAEA" Margin="17, 5, 17, 5" Grid.Column="0" Grid.Row="8" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Button Click="SwitchToSlider" Background="{ThemeResource ControlFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Margin="17, 5, 17, 5" Grid.Column="0" Grid.Row="8" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*"/>
@@ -204,32 +261,11 @@
                     </Grid.RowDefinitions>
                     <TextBlock Margin="15,0,0,10" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0" Text="Slider" FontWeight="SemiBold" FontSize="17"/>
                     <TextBlock Margin="15, 0, 0, 0" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Text="Allows users to choose within a range of numerical values" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
-                    <Slider Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center">
-                        <Slider.Resources>
-                            <ResourceDictionary x:Name="SliderResources">
-                                <ResourceDictionary.ThemeDictionaries>
-                                    <ResourceDictionary x:Key="Light">
-                                        <SolidColorBrush x:Key="SliderThumbBackground"  
-                                                         Color="#005FB8"/>
-                                        <SolidColorBrush x:Key="SliderTrackValueFill"
-                                                         Color="#005FB8"/>
-                                        <SolidColorBrush x:Key="SliderTrackValueFillPointerOver"
-                                                         Color="#005FB8"/>
-                                        <SolidColorBrush x:Key="SliderTrackValueFillPressed"
-                                                         Color="#005FB8"/>
-                                        <SolidColorBrush x:Key="SliderThumbBackgroundPointerOver"
-                                                         Color="#005FB8"/>
-                                        <SolidColorBrush x:Key="SliderThumbBackgroundPressed"
-                                                         Color="#005FB8"/>
-                                    </ResourceDictionary>
-                                </ResourceDictionary.ThemeDictionaries>
-                            </ResourceDictionary>
-                        </Slider.Resources>
-                    </Slider>
+                    <Slider Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
                 </Grid>
             </Button>
             <!-- TEACHING TIP -->
-            <Button Click="SwitchToTeachingTip" Background="#FFFFFF" BorderBrush="#EAEAEA" Margin="17, 5, 17, 5" Grid.Column="1" Grid.Row="8" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Button Click="SwitchToTeachingTip" Background="{ThemeResource ControlFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Margin="17, 5, 17, 5" Grid.Column="1" Grid.Row="8" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*"/>
@@ -250,7 +286,7 @@
                 </Grid>
             </Button>
             <!-- TEXT BOX -->
-            <Button Click="SwitchToTextBox" Background="#FFFFFF" BorderBrush="#EAEAEA" Margin="17, 5, 17, 5" Grid.Column="0" Grid.Row="10" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Button Click="SwitchToTextBox" Background="{ThemeResource ControlFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Margin="17, 5, 17, 5" Grid.Column="0" Grid.Row="10" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*"/>
@@ -262,11 +298,11 @@
                     </Grid.RowDefinitions>
                     <TextBlock Margin="15,0,0,10" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0" Text="Text Box" FontWeight="SemiBold" FontSize="17"/>
                     <TextBlock Margin="15, 0, 0, 0" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Text="Displays user-typed text in box" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
-                    <TextBox Header="Type a word:" PlaceholderText="Type here" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="#EAEAEA" SelectionHighlightColor="#005FB8" />
+                    <TextBox Header="Type a word:" PlaceholderText="Type here" Grid.RowSpan="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" SelectionHighlightColor="{ThemeResource SystemAccentColor}" />
                 </Grid>
             </Button>
             <!-- TOGGLE -->
-            <Button Click="SwitchToToggle" Background="#FFFFFF" BorderBrush="#EAEAEA" Margin="17, 5, 17, 5" Grid.Column="1" Grid.Row="10" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+            <Button Click="SwitchToToggle" Background="{ThemeResource ControlFillColorDefaultBrush}" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}" Margin="17, 5, 17, 5" Grid.Column="1" Grid.Row="10" CornerRadius="10" BorderThickness="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
                 <Grid HorizontalAlignment="Stretch">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="5*"/>
@@ -278,22 +314,7 @@
                     </Grid.RowDefinitions>
                     <TextBlock Margin="15,0,0,10" VerticalAlignment="Bottom" Grid.Column="0" Grid.Row="0" Text="Toggle" FontWeight="SemiBold" FontSize="17"/>
                     <TextBlock Margin="15, 0, 0, 0" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Text="On/Off style button whose appearance persists after user click" TextWrapping="Wrap" FontSize="14" HorizontalAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
-                    <ToggleSwitch Header="Select here:" Grid.RowSpan="2" Grid.Column="1" Margin="60, 0, 0, 0" VerticalAlignment="Center">
-                        <ToggleSwitch.Resources>
-                            <ResourceDictionary x:Name="ToggleSwitchResources">
-                                <ResourceDictionary.ThemeDictionaries>
-                                    <ResourceDictionary x:Key="Light">
-                                        <SolidColorBrush x:Key="ToggleSwitchFillOnPointerOver"  
-                                                         Color="#005FB8"/>
-                                        <SolidColorBrush x:Key="ToggleSwitchFillOn"
-                                                         Color="#005FB8"/>
-                                        <SolidColorBrush x:Key="ToggleSwitchFillOnPressed"
-                                                         Color="#196EBF"/>
-                                    </ResourceDictionary>
-                                </ResourceDictionary.ThemeDictionaries>
-                            </ResourceDictionary>
-                        </ToggleSwitch.Resources>
-                    </ToggleSwitch>
+                    <ToggleSwitch Header="Select here:" Grid.RowSpan="2" Grid.Column="1" Margin="60, 0, 0, 0" VerticalAlignment="Center"/>
                 </Grid>
             </Button>
         </Grid>

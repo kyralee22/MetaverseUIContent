@@ -31,11 +31,14 @@ namespace MetaverseUIContent.Views
         public string header => "Button";
         private MainWindow wnd = (MainWindow)(Application.Current as App).m_window;
         private HomePage hp = new HomePage();
+        public Style styleTheme { get; set; }
 
         public ButtonPage()
         {
             this.InitializeComponent();
+            setMode();
         }
+
 
         public void buttonDownload(object sender, RoutedEventArgs e)
         {
@@ -57,6 +60,17 @@ namespace MetaverseUIContent.Views
         {
             this.Frame.Navigate(typeof(FontsPage));
             wnd.setSelected("Fonts_Item");
+        }
+
+        public void setMode()
+        {
+            if(App.Current.RequestedTheme == ApplicationTheme.Light)
+            {
+                styleTheme = (Style)App.Current.Resources["LightModeToggleButton"];  
+            } else
+            {
+                styleTheme = (Style)App.Current.Resources["DarkModeToggleButton"]; 
+            }
         }
 
     }

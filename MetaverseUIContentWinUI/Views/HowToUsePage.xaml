@@ -5,25 +5,24 @@
     xmlns:local="using:MetaverseUIContent.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    mc:Ignorable="d" >
 
     <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-        <Grid Background="#f9f9f9" HorizontalAlignment="Stretch">
-            <StackPanel Background="#f9f9f9" Margin="40, 0, 0, 0">
+        <Grid HorizontalAlignment="Stretch">
+            <StackPanel Margin="40, 0, 0, 0">
                 <TextBlock Text="Learn how to import each UI asset to your Unity project to start developing!" FontSize="16" Margin="0, 10, 0, 15"/>
-                <Border BorderThickness="0" Background="#EFD9FD" Width="1000" Height="110" HorizontalAlignment="Left" CornerRadius="5">
+                <Border BorderThickness="0" Background="{ThemeResource NoteBox}" Width="1000" Height="110" HorizontalAlignment="Left" CornerRadius="5">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="3*"/>
                             <RowDefinition Height="5*"/>
                         </Grid.RowDefinitions>
-                        <FontIcon HorizontalAlignment="Left" FontWeight="SemiBold" Margin="20, 20, 0, 0" Grid.Row="0" FontFamily="Segoe MDL2 Assets" Glyph="&#xE783;" Foreground="#575757"/>
-                        <TextBlock Text="Note" FontWeight="SemiBold" FontSize="18" Foreground="#575757" Grid.Row="0" HorizontalAlignment="Left" Margin="50, 18, 0, 0"/>
+                        <FontIcon HorizontalAlignment="Left" FontWeight="SemiBold" Margin="20, 20, 0, 0" Grid.Row="0" FontFamily="Segoe MDL2 Assets" Glyph="&#xE783;" Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
+                        <TextBlock Text="Note" FontWeight="SemiBold" FontSize="18" Foreground="{ThemeResource TextFillColorSecondaryBrush}" Grid.Row="0" HorizontalAlignment="Left" Margin="50, 18, 0, 0"/>
                         <StackPanel Orientation="Horizontal"  Grid.Row="1" VerticalAlignment="Center">
-                            <TextBlock Text="If you do not have Unity version 2019.3 downloaded to your machine, download it " HorizontalAlignment="Left" FontSize="16" Margin="22, 0, 6, 20"/>
+                            <TextBlock Foreground="{ThemeResource NoteBoxColor}" Text="If you do not have Unity version 2019.3 downloaded to your machine, download it " HorizontalAlignment="Left" FontSize="16" Margin="22, 0, 6, 20"/>
                             <TextBlock FontSize="16">
-                            <Hyperlink NavigateUri="https://unity3d.com/get-unity/download">here.</Hyperlink>
+                            <Hyperlink Foreground="#632D86" NavigateUri="https://unity3d.com/get-unity/download">here.</Hyperlink>
                             </TextBlock>
                         </StackPanel>
                     </Grid>

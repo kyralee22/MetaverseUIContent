@@ -27,10 +27,23 @@ namespace MetaverseUIContent.Views
     {
         public string header => "Home";
         MainWindow navBar = (MainWindow)(Application.Current as App).m_window;
+        public Style styleTheme { get; set; }
         public HomePage()
         {
             this.InitializeComponent();
+            setMode();
             
+        }
+        public void setMode()
+        {
+            if (App.Current.RequestedTheme == ApplicationTheme.Light)
+            {
+                styleTheme = (Style)App.Current.Resources["LightModeToggleButton"];
+            }
+            else
+            {
+                styleTheme = (Style)App.Current.Resources["DarkModeToggleButton"];
+            }
         }
         private void ShowTip(object sender, RoutedEventArgs e)
         {

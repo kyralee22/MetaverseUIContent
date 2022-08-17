@@ -49,7 +49,7 @@ namespace MetaverseUIContentWinUI
             m_window.Activate();
         }
 
-        
+
 
         public Window m_window;
     }

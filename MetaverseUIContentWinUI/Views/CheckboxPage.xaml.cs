@@ -8,11 +8,14 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,9 +30,12 @@ namespace MetaverseUIContent.Views
     {
         public string header => "Checkbox";
         private MainWindow wnd = (MainWindow)(Application.Current as App).m_window;
+
+        public Windows.UI.Color CBCheckGlyphForegroundChecked { get; set; }
         public CheckboxPage()
         {
             this.InitializeComponent();
+            checkTheme();
         }
 
         public void navHowTo(object sender, RoutedEventArgs e)
@@ -47,6 +53,15 @@ namespace MetaverseUIContent.Views
         public void checkboxDownload(object sender, RoutedEventArgs e)
         {
             wnd.pickDownloadLocation("ms-appx:///Assets/Unity Assets/Checkbox.unitypackage", "CheckboxAsset.unitypackage");
+        }
+
+
+        public void checkTheme()
+        {
+
+            CBCheckGlyphForegroundChecked = (Windows.UI.Color)App.Current.Resources["SystemAccentColor"];
+            
+            
         }
     }
 }
